@@ -60,6 +60,21 @@ Passo a passo:
 
         2. Pressione `Ctrl+X` para sair.
  
-6. **Coposer no WSL2:**
+6. **Composer no WSL2:**
 
+    - Execute os comandos abaixo no terminal do Ubuntu:
+
+        ```bash
+        sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+        sudo php -r "if (hash_file('sha384', 'composer-setup.php') === 'c8b085408188070d5f52bcfe4ecfbee5f727afa458b2573b8eaaf77b3419b0bf2768dc67c86944da1544f06fa544fd47') { echo 'Installer verified'.PHP_EOL; } else { echo 'Installer corrupt'.PHP_EOL; unlink('composer-setup.php'); exit(1); }"
+        sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+        ```
+    
+        O composer será instalado globalmente.
+        
+        Verifique: `composer -V`.
+        
+        Para segurança, compare SHA-384 da instalação com a do site oficial (instruções completas no [download](https://getcomposer.org/download/)).
+
+        
 
