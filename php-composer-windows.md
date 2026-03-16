@@ -76,5 +76,6 @@ Passo a passo:
         
         Para segurança, compare SHA-384 da instalação com a do site oficial (instruções completas no [download](https://getcomposer.org/download/)).
 
+## 3. PHP com Docker no Windows (WSL2)
         
 
