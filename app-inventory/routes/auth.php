@@ -35,6 +35,7 @@ Route::middleware('guest')->group(function () {
         ->name('password.store');
 });
 
+# Common routes for authenticated users
 Route::middleware('auth')->group(function () {
     Route::get('verify-email', EmailVerificationPromptController::class)
         ->name('verification.notice');
@@ -57,3 +58,7 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
 });
+
+# TODO - Day 4 - Authorization Middleware (Roles) 
+# Exclusive routes for administrators
+Route::middleware('auth', 'role:admin')->group(function(){ /* rotas admin */ });
