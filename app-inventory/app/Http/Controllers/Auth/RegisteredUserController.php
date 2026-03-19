@@ -40,6 +40,9 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            // Day 4 - Authentication and users.
+            // Register and create a user as an operator.
+            'role' => 'operador',
         ]);
 
         event(new Registered($user));
