@@ -1,6 +1,11 @@
 #!/bin/bash
 
 echo "=============================="
+echo "MySQL - Describe users ==="
+echo "=============================="
+docker exec -it inventory_app_db mysql -u laravel -psecret -e "USE inventory; DESCRIBE users;"
+
+echo "=============================="
 echo "MySQL - Total users"
 echo "=============================="
 docker exec -i inventory_app_db mysql -u laravel -psecret -e "USE inventory; SELECT COUNT(*) AS total_users FROM users;"
