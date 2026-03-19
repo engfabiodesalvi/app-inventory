@@ -22,6 +22,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        // Day 4 - Authentication and users.
+        // allow use of the role field in the User model
+        'role',
     ];
 
     /**
