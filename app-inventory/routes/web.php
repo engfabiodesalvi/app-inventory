@@ -17,4 +17,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Day 4 - Authentication and users.
+// Create a protected route for admin
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/admin', function () {
+        return 'Área do admin';
+    })->name('admin.dashboard');
+});
+
 require __DIR__.'/auth.php';
